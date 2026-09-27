@@ -1,60 +1,126 @@
-const menu = document.querySelector('.menu');
-const nav = document.querySelector('.site-header nav');
+const menuButton = document.querySelector('.menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+const header = document.querySelector('.site-header');
+const scrollMeter = document.querySelector('.scroll-meter i');
 
-menu?.addEventListener('click', () => {
-  const open = menu.getAttribute('aria-expanded') === 'true';
-  menu.setAttribute('aria-expanded', String(!open));
-  nav?.classList.toggle('open', !open);
+function setMenu(open) {
+  menuButton?.setAttribute('aria-expanded', String(open));
+  menuButton?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mobileMenu?.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+}
+
+menuButton?.addEventListener('click', () => {
+  setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
 });
 
-nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  menu?.setAttribute('aria-expanded', 'false');
-  nav.classList.remove('open');
-}));
+mobileMenu?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => setMenu(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenu(false);
+});
 
 const revealTargets = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const observer = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.1 });
-  revealTargets.forEach((element) => observer.observe(element));
+  }, { threshold: 0.08 });
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
 } else {
-  revealTargets.forEach((element) => element.classList.add('visible'));
+  revealTargets.forEach((target) => target.classList.add('visible'));
 }
 
-const duelButtons = document.querySelectorAll('[data-duel]');
-const duelPhones = document.querySelectorAll('.duel-phone');
-const duelDescription = document.querySelector('.duel-description');
-const duelCopy = {
-  leaderboard: "Each driver's best valid time. No noisy global ranking—just the people connected to the route.",
-  stats: 'Compare your best and latest runs, including time, average speed, top speed, and speed across the route.',
-};
+const storyScreen = document.querySelector('#story-screen');
+const storyIndex = document.querySelector('#story-index');
+const storyStatus = document.querySelector('#story-status');
+const storySteps = document.querySelectorAll('.story-step');
 
-duelButtons.forEach((button) => button.addEventListener('click', () => {
-  const target = button.dataset.duel;
-  duelButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-  duelPhones.forEach((phone) => phone.classList.toggle('is-front', phone.dataset.screen === target));
-  if (duelDescription) duelDescription.textContent = duelCopy[target];
-}));
+function activateStory(step) {
+  if (!step || !storyScreen) return;
+  const screen = step.dataset.screen;
+  const index = String(step.dataset.step).padStart(2, '0');
+  const mobileSource = `./assets/screens/current/mobile/${screen}.jpg`;
+  const desktopSource = `./assets/screens/current/web/${screen}.jpg`;
 
-const form = document.querySelector('.waitlist');
-const toast = document.querySelector('.toast');
-form?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const email = form.querySelector('input');
-  if (!email?.checkValidity()) return email?.reportValidity();
-  toast?.classList.add('show');
-  email.value = '';
-  window.setTimeout(() => toast?.classList.remove('show'), 3200);
+  storySteps.forEach((item) => item.classList.toggle('is-active', item === step));
+  storyIndex.textContent = index;
+  storyStatus.textContent = step.dataset.status;
+
+  if (storyScreen.dataset.current === screen) return;
+  storyScreen.parentElement.classList.add('is-changing');
+  window.setTimeout(() => {
+    storyScreen.src = desktopSource;
+    storyScreen.srcset = `${mobileSource} 420w, ${desktopSource} 720w`;
+    storyScreen.alt = step.dataset.alt;
+    storyScreen.dataset.current = screen;
+    storyScreen.parentElement.classList.remove('is-changing');
+  }, 170);
+}
+
+if ('IntersectionObserver' in window) {
+  const storyObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) activateStory(visible.target);
+  }, { threshold: [0.45, 0.65] });
+
+  storySteps.forEach((step) => storyObserver.observe(step));
+}
+
+storySteps.forEach((step) => {
+  step.addEventListener('click', () => activateStory(step));
 });
 
-window.addEventListener('scroll', () => {
-  const phone = document.querySelector('.hero-phone');
-  if (phone && window.innerWidth > 1000 && window.scrollY < 900) {
-    phone.style.translate = `0 ${window.scrollY * 0.045}px`;
+const scoreButtons = document.querySelectorAll('[data-score-tab]');
+const scoreScreens = document.querySelectorAll('[data-score-screen]');
+
+scoreButtons.forEach((button) => {
+  button.setAttribute('aria-pressed', String(button.classList.contains('is-active')));
+  button.addEventListener('click', () => {
+    const target = button.dataset.scoreTab;
+    scoreButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    scoreScreens.forEach((screen) => {
+      screen.classList.toggle('is-active', screen.dataset.scoreScreen === target);
+    });
+  });
+});
+
+let scrollFrame = null;
+function updateScrollEffects() {
+  scrollFrame = null;
+  const y = window.scrollY;
+  const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  scrollMeter.style.transform = `scaleX(${Math.min(y / max, 1)})`;
+  header?.classList.toggle('is-sticky', y > 130);
+
+  if (window.innerWidth > 980 && y < window.innerHeight * 1.1) {
+    const mapPhone = document.querySelector('.phone-map');
+    const homePhone = document.querySelector('.phone-home');
+    if (mapPhone) mapPhone.style.translate = `0 ${y * 0.035}px`;
+    if (homePhone) homePhone.style.translate = `0 ${y * -0.018}px`;
   }
+}
+
+window.addEventListener('scroll', () => {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScrollEffects);
 }, { passive: true });
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 980) setMenu(false);
+  updateScrollEffects();
+});
+
+updateScrollEffects();
