@@ -32,6 +32,10 @@ function inspect(html, name, isLive = false) {
     check(html.includes('18'), name + ': age policy missing');
     if (/not yet effective|draft for .*review/i.test(html)) drafts.push((isLive ? 'live ' : '') + name);
   }
+  if (name === 'index.html') {
+    check(!html.includes('assets/screens/current/'), name + ': outdated app screenshot still referenced');
+    check(/public registration is not open/i.test(html), name + ': launch status missing');
+  }
 }
 
 for (const name of names) {
