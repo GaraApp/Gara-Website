@@ -1,296 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#050705" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <link rel="canonical" href="https://drivegara.com/" />
-    <meta property="og:url" content="https://drivegara.com/" />
-    <meta name="description" content="GARA is the friend-first driving app for discovering routes, recording personal drives and sharing the roads you enjoy. Preparing for launch." />
-    <meta property="og:title" content="GARA — Make the road mean something." />
-    <meta property="og:description" content="Create the route. Drive it with your circle. Give every road a story worth coming back to." />
-    <meta property="og:type" content="website" />
-    <title>GARA — Make the road mean something.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href="./assets/screens/current/mobile/map.jpg" media="(max-width: 600px)" />
-    <link rel="preload" as="image" href="./assets/screens/current/web/map.jpg" media="(min-width: 601px)" />
-    <link rel="stylesheet" href="./styles.css?v=20260716d" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="page-noise" aria-hidden="true"></div>
-    <div class="scroll-meter" aria-hidden="true"><i></i></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111311" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://drivegara.com/" />
+  <meta name="description" content="Gara brings route discovery, a private driving map, and your car community together. An iPhone app for people who love the drive. Preparing for access." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drivegara.com/" />
+  <meta property="og:title" content="Gara — For the love of the drive." />
+  <meta property="og:description" content="Find your roads. Remember your drives. Bring your people." />
+  <meta property="og:image" content="https://drivegara.com/assets/2026-11/forest.jpg" />
+  <title>Gara — For the love of the drive.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="./assets/2026-11/road.jpg" />
+  <link rel="stylesheet" href="./site.css?v=20261110" />
+  <script src="./site.js?v=20261110" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Gara home"><img src="./assets/gara-logo.png" width="236" height="71" alt="GARA" /></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#experience">The app</a><a href="#circle">Your people</a><a href="#questions">Good to know</a></nav>
+      <a class="header-cta" href="#access">Meet Gara <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#experience">The app <span>01</span></a><a href="#circle">Your people <span>02</span></a><a href="#questions">Good to know <span>03</span></a><a href="#access">Meet Gara <span>↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> iPhone first · In development</p>
+        <h1 id="hero-title">For the love<br />of the <span>drive.</span></h1>
+        <p class="hero-intro">Your roads. Your people.<br />Your own way.</p>
+        <p class="hero-description">Discover routes, build a private map of your drives, and share the car life around them.</p>
+        <div class="hero-actions"><a class="button button-lime" href="#experience">Explore the app <span aria-hidden="true">↓</span></a><a class="text-link" href="#access">Ask about access <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-footnote"><span class="mini-route" aria-hidden="true"></span><span>Every road has a story.<br />Start yours with Gara.</span></div>
+      </div>
+      <div class="hero-media">
+        <figure class="road-photo"><img src="./assets/2026-11/road.jpg" width="1200" height="1379" fetchpriority="high" alt="A quiet road curving into deep green woodland" /><figcaption>A little further. A little more to remember.</figcaption></figure>
+        <button class="phone hero-phone" type="button" data-zoom="./assets/2026-11/map-720.jpg" data-caption="GaraMap route discovery. Current development build with a sample test route." aria-label="Enlarge GaraMap screenshot"><img src="./assets/2026-11/map-720.jpg" srcset="./assets/2026-11/map-440.jpg 440w, ./assets/2026-11/map-720.jpg 720w" sizes="(max-width:600px) 47vw, 245px" width="720" height="1565" alt="The actual GaraMap screen, with a lime route and route card above the Home, Map and Ranking navigation" /><span class="image-expand" aria-hidden="true">↗</span></button>
+        <div class="hero-media-label"><span>GARAMAP · ACTUAL APP CAPTURE</span><span><a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> <a href="https://apps.mapbox.com/feedback/">Improve this map</a></span></div>
+      </div>
+    </section>
 
-    <header class="site-header">
-      <div class="header-inner shell">
-        <a class="brand" href="#top" aria-label="GARA home">
-          <img src="./assets/gara-logo.png" width="236" height="71" alt="GARA" />
-        </a>
-        <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="#experience">Experience</a>
-          <a href="#circle">Your circle</a>
-          <a href="#scoring">Scoring</a>
-          <a href="#safety">Safety</a>
-        </nav>
-        <div class="header-side">
-          <span class="beta-status"><i></i> Preparing for launch</span>
-          <a class="header-cta" href="#access">Get access <span>↗</span></a>
-          <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-            <span></span><span></span>
-          </button>
+    <div class="shell opening-line"><span>Find your roads.</span><span>Remember your drives.</span><span>Bring your people.</span></div>
+
+    <section class="experience section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><div><p class="eyebrow">The Gara experience</p><h2 id="experience-title">More to a drive<br />than the destination.</h2></div><p>A place for the road ahead, the roads behind you, and everything you love in between.</p></div>
+      <div class="experience-layout">
+        <div class="feature-controls">
+          <div class="feature-tabs" role="tablist" aria-label="Explore Gara features" aria-orientation="vertical">
+            <button class="feature-tab" type="button" role="tab" id="tab-discover" aria-controls="panel-discover" aria-selected="true" tabindex="0" data-feature="discover"><span class="feature-number">01</span><span><strong>Find your kind of road.</strong><small>Discovery, with room to explore.</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+            <button class="feature-tab" type="button" role="tab" id="tab-remember" aria-controls="panel-remember" aria-selected="false" tabindex="-1" data-feature="remember"><span class="feature-number">02</span><span><strong>Watch your world grow.</strong><small>A driving history that feels like yours.</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+            <button class="feature-tab" type="button" role="tab" id="tab-connect" aria-controls="panel-connect" aria-selected="false" tabindex="-1" data-feature="connect"><span class="feature-number">03</span><span><strong>Keep good company.</strong><small>The car life around the drive.</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <div class="feature-panel" role="tabpanel" id="panel-discover" aria-labelledby="tab-discover" tabindex="0"><p>Explore on GaraMap, find a route shared with you, or create one of your own. Follow a fixed path—or choose an open route and find your own way between its start and finish.</p><ul><li>Preview the route before you begin</li><li>Browse yours, friends’ routes, or nearby</li><li>Choose a drive deliberately</li></ul></div>
+          <div class="feature-panel" role="tabpanel" id="panel-remember" aria-labelledby="tab-remember" tabindex="0" hidden><p>Your recorded journeys become a private driving atlas. Familiar roads gain a warm glow as you return, while date filters help you look back at where you’ve been.</p><ul><li>Personal history, separate from route results</li><li>Heat and street-name controls</li><li>Optional automatic mapping, saved on your iPhone</li></ul><p class="fine-print">Automatic mapping needs permission and may miss journeys. Heat is a visual summary, rather than an exact road-completion measure.</p></div>
+          <div class="feature-panel" role="tabpanel" id="panel-connect" aria-labelledby="tab-connect" tabindex="0" hidden><p>A good road, a car detail, a moment worth keeping. Share photos, thoughts, and routes through a feed built around the people and roads you care about.</p><ul><li>For you, Following, and Friends views</li><li>Photo, text, and route posts</li><li>Comments, saves, and shared context</li></ul></div>
+        </div>
+        <div class="feature-stage">
+          <span class="stage-word" aria-hidden="true">DISCOVER</span>
+          <button class="phone feature-phone" type="button" data-zoom="./assets/2026-11/map-720.jpg" data-caption="GaraMap route discovery. Current development build with a sample test route." aria-label="Enlarge feature screenshot"><img id="feature-image" src="./assets/2026-11/map-720.jpg" srcset="./assets/2026-11/map-440.jpg 440w, ./assets/2026-11/map-720.jpg 720w" sizes="(max-width:600px) 61vw, 288px" width="720" height="1565" loading="lazy" alt="GaraMap showing a sample route in Stockholm" /><span class="image-expand" aria-hidden="true">↗</span></button>
+          <div class="stage-caption"><span id="feature-label">GaraMap / route discovery</span><span>Tap to take a closer look ↗</span></div>
         </div>
       </div>
-      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-        <a href="#experience"><span>01</span>Experience</a>
-        <a href="#circle"><span>02</span>Your circle</a>
-        <a href="#scoring"><span>03</span>Scoring</a>
-        <a href="#safety"><span>04</span>Safety</a>
-        <a class="mobile-menu-cta" href="#access">Join early access <span>↗</span></a>
-      </nav>
-    </header>
+      <p class="capture-note">Actual screens from Gara’s current development build. The account, routes, and driving history shown are test content.</p>
+      <p class="map-attribution"><a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> <a href="https://apps.mapbox.com/feedback/">Improve this map</a></p>
+    </section>
 
-    <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <svg class="hero-route" viewBox="0 0 1200 900" aria-hidden="true">
-          <path class="hero-route-aura" d="M-40 800c120-58 132-190 243-219 116-31 77-173 221-183 130-9 129-144 283-152 119-6 167-119 283-119 77 0 130-36 250-111" />
-          <path class="hero-route-line" d="M-40 800c120-58 132-190 243-219 116-31 77-173 221-183 130-9 129-144 283-152 119-6 167-119 283-119 77 0 130-36 250-111" />
-        </svg>
-
-        <div class="hero-inner shell">
-          <div class="hero-copy reveal">
-            <p class="kicker"><span>GARA / 001</span> The friend-first driving app</p>
-            <h1>Make the road<br /><em>mean something.</em></h1>
-            <p class="hero-lede">Create a route. Share it with your circle. Keep a personal record of the roads you enjoy—at your own pace.</p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#access"><span>Join early access</span><i>↗</i></a>
-              <a class="text-button" href="#experience"><i>↓</i><span>Explore the experience</span></a>
-            </div>
-            <div class="hero-trust" aria-label="Product highlights">
-              <p><b>01</b><span>Routes made<br />by your group</span></p>
-              <p><b>02</b><span>Personal GPS<br />drive history</span></p>
-              <p><b>03</b><span>Your roads<br />and your circle</span></p>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal">
-            <div class="visual-orbit orbit-one" aria-hidden="true"></div>
-            <div class="visual-orbit orbit-two" aria-hidden="true"></div>
-            <div class="hero-phone phone-frame phone-map">
-              <img src="./assets/screens/current/web/map.jpg" srcset="./assets/screens/current/mobile/map.jpg 420w, ./assets/screens/current/web/map.jpg 720w" sizes="(max-width: 600px) 68vw, 330px" width="720" height="1565" alt="The current GARA map showing a friend route ready to drive" />
-            </div>
-            <div class="hero-phone phone-frame phone-home">
-              <img src="./assets/screens/current/web/ranking.jpg" srcset="./assets/screens/current/mobile/ranking.jpg 420w, ./assets/screens/current/web/ranking.jpg 720w" sizes="(max-width: 600px) 50vw, 270px" width="720" height="1565" alt="The current GARA friend ranking and route-points progress" />
-            </div>
-
-            <aside class="live-card" aria-label="Gara launch direction">
-              <div class="live-card-head"><span><i></i> In development</span><small>GARA</small></div>
-              <div class="live-leader"><b>01</b><span>Discover<small>Choose your next route</small></span><strong>↗</strong></div>
-              <div class="live-chaser"><b>02</b><span>Remember<small>Keep your personal history</small></span><strong>↗</strong></div>
-              <div class="live-card-foot"><span>Public-road speed ranking</span><b>Off</b></div>
-            </aside>
-
-            <div class="hero-coordinate" aria-hidden="true">
-              <span>59.3293° N</span><span>18.0686° E</span>
-            </div>
-            <div class="hero-node node-start" aria-hidden="true"><i></i><span>START</span></div>
-            <div class="hero-node node-finish" aria-hidden="true"><i></i><span>FINISH</span></div>
-          </div>
-        </div>
-
-        <div class="hero-footer shell" aria-hidden="true">
-          <span>Private circle / public routes</span>
-          <span>Built for iPhone</span>
-          <span>Worldwide</span>
-        </div>
-      </section>
-
-      <section class="roadbook" aria-label="The GARA loop">
-        <div class="roadbook-track">
-          <span>CREATE THE LINE</span><i></i><span>DRIVE RESPONSIBLY</span><i></i><span>KEEP THE MEMORY</span><i></i><span>BRING THE GROUP BACK</span><i></i>
-          <span>CREATE THE LINE</span><i></i><span>DRIVE RESPONSIBLY</span><i></i><span>KEEP THE MEMORY</span><i></i><span>BRING THE GROUP BACK</span><i></i>
-        </div>
-      </section>
-
-      <section class="experience section" id="experience">
-        <div class="shell section-head reveal">
-          <div>
-            <p class="kicker"><span>01 / Experience</span> One route. Four moments.</p>
-            <h2>A simple loop<br />that keeps <em>moving.</em></h2>
-          </div>
-          <p>GARA connects route discovery, personal drive history and sharing with your circle. Screenshots illustrate the prototype; secure launch accounts are being prepared.</p>
-        </div>
-
-        <div class="experience-stage shell">
-          <div class="experience-visual reveal">
-            <div class="visual-panel-grid" aria-hidden="true"></div>
-            <p class="visual-label"><span id="story-index">01</span> / 04 &nbsp; CURRENT APP FLOW</p>
-            <div class="story-phone phone-frame">
-              <img id="story-screen" src="./assets/screens/current/web/home.jpg" srcset="./assets/screens/current/mobile/home.jpg 420w, ./assets/screens/current/web/home.jpg 720w" sizes="(max-width: 760px) 69vw, 318px" width="720" height="1565" alt="The current GARA home feed built around friends and routes" data-current="home" />
-            </div>
-            <div class="story-telemetry" aria-hidden="true">
-              <small>ROUTE SIGNAL</small>
-              <span><i></i><i></i><i></i><i></i><i></i></span>
-              <b id="story-status">CIRCLE ACTIVE</b>
-            </div>
-            <svg class="story-route" viewBox="0 0 360 470" aria-hidden="true"><path d="M40 422c12-63 78-31 83-97 5-67-52-69 1-133 45-54 94-14 104-83 7-48 41-61 91-69" /><circle cx="40" cy="422" r="7" /><circle cx="319" cy="40" r="9" /></svg>
-          </div>
-
-          <div class="story-steps">
-            <article class="story-step is-active reveal" data-step="1" data-screen="home" data-alt="The current GARA home feed built around friends and routes" data-status="CIRCLE ACTIVE">
-              <span>01</span>
-              <div><h3>Start with your circle</h3><p>See what friends are sharing, which routes are moving, and where the group has a new reason to drive.</p><small>FRIENDS → ROUTES → ACTIVITY</small></div>
-            </article>
-            <article class="story-step reveal" data-step="2" data-screen="map" data-alt="The current GARA map for finding, creating, and driving routes" data-status="LINE SELECTED">
-              <span>02</span>
-              <div><h3>Pick the next line</h3><p>Find a friend route, explore nearby, or create your own. The map keeps the road—not an endless feed—at the center.</p><small>YOURS / FRIENDS / NEARBY</small></div>
-            </article>
-            <article class="story-step reveal" data-step="3" data-screen="route-detail" data-alt="Prototype Gara route details" data-status="DRIVE SAVED">
-              <span>03</span>
-              <div><h3>Keep your drive history</h3><p>Navigate to the start, record a foreground GPS drive and keep it in your personal history. Road laws and conditions always come first.</p><small>PERSONAL RECORD / YOUR PACE</small></div>
-            </article>
-            <article class="story-step reveal" data-step="4" data-screen="ranking" data-alt="The current GARA friend ranking with the next route target" data-status="TARGET UPDATED">
-              <span>04</span>
-              <div><h3>Find your next road</h3><p>Return to your routes and circle when you want another drive. Public-road times do not earn competitive points.</p><small>EXPLORE / REMEMBER / SHARE</small></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="circle section" id="circle">
-        <div class="circle-backdrop" aria-hidden="true"><span>FRIEND FIRST</span></div>
-        <div class="shell circle-layout">
-          <div class="circle-copy reveal">
-            <p class="kicker"><span>02 / Your circle</span> Smaller on purpose.</p>
-            <h2>For the people<br />you actually<br /><em>drive with.</em></h2>
-            <p class="circle-lede">The best challenge is personal. GARA connects routes, posts, profiles, and garages around your real driving circle.</p>
-            <ul class="circle-list">
-              <li><span>01</span><p><b>Friend activity that has context</b><small>See the route behind the result—not another empty like count.</small></p></li>
-              <li><span>02</span><p><b>Share with your circle</b><small>Follow drivers and choose the audience for your posts.</small></p></li>
-              <li><span>03</span><p><b>Identity beyond a username</b><small>Your routes, runs, friends, and garage in one profile.</small></p></li>
-            </ul>
-          </div>
-
-          <div class="circle-visual reveal">
-            <div class="circle-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <div class="circle-phone phone-frame circle-home">
-              <img src="./assets/screens/current/web/home.jpg" srcset="./assets/screens/current/mobile/home.jpg 420w, ./assets/screens/current/web/home.jpg 720w" sizes="(max-width: 600px) 64vw, 305px" width="720" height="1565" loading="lazy" alt="The current GARA home screen showing friend activity and route posts" />
-            </div>
-            <div class="circle-phone phone-frame circle-chat">
-              <img src="./assets/screens/current/web/profile.jpg" srcset="./assets/screens/current/mobile/profile.jpg 420w, ./assets/screens/current/web/profile.jpg 720w" sizes="(max-width: 600px) 45vw, 245px" width="720" height="1565" loading="lazy" alt="A prototype GARA profile showing a driver's identity and garage" />
-            </div>
-            <div class="crew-card" aria-hidden="true">
-              <div><span class="avatar avatar-one"></span><span class="avatar avatar-two"></span><span class="avatar avatar-three"></span><span class="avatar avatar-four"></span></div>
-              <p><b>Your circle</b><small>5 drivers connected</small></p>
-              <i>LIVE</i>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="scoring section" id="scoring">
-        <div class="shell section-head scoring-head reveal">
-          <div>
-            <p class="kicker"><span>03 / Scoring</span> Clear by design.</p>
-            <h2>Progress without<br /><em>public-road racing.</em></h2>
-          </div>
-          <p>Launch drives are personal history, not fastest-time competition. Timed ranking and competitive points stay unavailable unless a controlled course and result-validation system are independently verified.</p>
-        </div>
-
-        <div class="shell score-system reveal">
-          <div class="score-board">
-            <div class="score-board-head"><span>SAFE DRIVING / LAUNCH</span><i>PLANNED</i></div>
-            <div class="score-places">
-              <p class="place-first"><small>DISCOVER</small><b>01</b><span>Preview routes</span><strong>↗</strong></p>
-              <p><small>RECORD</small><b>02</b><span>Your drive</span><strong>↗</strong></p>
-              <p><small>REMEMBER</small><b>03</b><span>Private GPS history</span><strong>↗</strong></p>
-              <p><small>SHARE</small><b>04</b><span>Choose an audience</span><strong>↗</strong></p>
-            </div>
-            <div class="score-note"><span><i></i> Safety comes first</span><p>Prototype screenshots may show retired time rankings; they are not launch functionality.</p></div>
-          </div>
-
-          <div class="score-screens">
-            <div class="score-switch" role="group" aria-label="GARA rankings">
-              <button class="is-active" type="button" data-score-tab="ranking">Circle ranking</button>
-              <button type="button" data-score-tab="route">One route</button>
-            </div>
-            <div class="score-phone phone-frame is-active" data-score-screen="ranking">
-              <img src="./assets/screens/current/web/ranking.jpg" srcset="./assets/screens/current/mobile/ranking.jpg 420w, ./assets/screens/current/web/ranking.jpg 720w" sizes="(max-width: 600px) 68vw, 310px" width="720" height="1565" loading="lazy" alt="The current GARA circle ranking and route-points progress" />
-            </div>
-            <div class="score-phone phone-frame" data-score-screen="route">
-              <img src="./assets/screens/current/web/route-leaderboard.jpg" srcset="./assets/screens/current/mobile/route-leaderboard.jpg 420w, ./assets/screens/current/web/route-leaderboard.jpg 720w" sizes="(max-width: 600px) 68vw, 310px" width="720" height="1565" loading="lazy" alt="The current GARA leaderboard for one route shared between friends" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="profile-section section">
-        <div class="shell profile-layout">
-          <div class="profile-visual reveal">
-            <div class="profile-phone phone-frame">
-              <img src="./assets/screens/current/web/profile.jpg" srcset="./assets/screens/current/mobile/profile.jpg 420w, ./assets/screens/current/web/profile.jpg 720w" sizes="(max-width: 600px) 72vw, 330px" width="720" height="1565" loading="lazy" alt="The current GARA driver profile with garage and created routes" />
-            </div>
-            <div class="garage-spec" aria-hidden="true"><small>GARAGE / 01</small><b>Nissan Skyline R34</b><p><span>550 hp</span><span>600 Nm</span></p></div>
-          </div>
-          <div class="profile-copy reveal">
-            <p class="kicker"><span>04 / Identity</span> Every driver has a story.</p>
-            <h2>The routes.<br />The runs.<br /><em>The garage.</em></h2>
-            <p>A GARA profile is a record of what you created, what you completed, who you drive with, and the cars that make it yours.</p>
-            <div class="profile-facts">
-              <p><b>Routes</b><span>Lines you created for the group</span></p>
-              <p><b>Runs</b><span>Your history across every route</span></p>
-              <p><b>Garage</b><span>The cars behind the experience</span></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="safety section" id="safety">
-        <div class="safety-route" aria-hidden="true"></div>
-        <div class="shell safety-layout reveal">
-          <div class="safety-title">
-            <p class="kicker"><span>05 / Responsibility</span> The rule above every result.</p>
-            <h2>Records never<br />outrank <em>the road.</em></h2>
-          </div>
-          <div class="safety-copy">
-            <p>GARA records a drive. It never makes unsafe driving acceptable. Laws, conditions, other road users, and good judgment always come first.</p>
-            <div class="safety-rules">
-              <article><span>01</span><h3>Follow every road rule</h3><p>Speed limits and local laws apply on every route, every time.</p></article>
-              <article><span>02</span><h3>Choose routes responsibly</h3><p>Only drive where and when the route is appropriate.</p></article>
-              <article><span>03</span><h3>No result is worth a risk</h3><p>Stop or abandon a run whenever conditions are not safe.</p></article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="access section" id="access">
-        <svg class="access-line" viewBox="0 0 1000 450" aria-hidden="true"><path d="M-30 390c139-52 190-129 323-113 125 15 145-114 271-99 123 15 191-87 253-128 63-42 101-13 213-48" /></svg>
-        <div class="shell access-layout">
-          <div class="access-copy reveal">
-            <p class="kicker"><span>Early access / iPhone</span> Your circle starts here.</p>
-            <h2>Give your next drive<br /><em>a reason to return.</em></h2>
-          </div>
-          <div class="access-action reveal">
-            <p>GARA is being built for iPhone first. Public registration is not open yet. Email us if you would like to ask about future access.</p>
-            <p>Gara is intended for adults aged 18 and over. When Google sign-in is offered, Google account identity and email information are used to authenticate your Gara account. Location supports maps, deliberate drives and optional automatic journey mapping. Automatic mapping requires permission, keeps tracks on your device, and can miss trips; photos and social content support the features you choose to use. Read our <a href="./privacy.html" style="text-decoration:underline;text-underline-offset:4px">Privacy Policy</a> for details and current launch limitations.</p>
-            <a class="primary-button" href="mailto:gara.support@gmail.com?subject=Gara%20access%20question"><span>Contact Gara</span><i>↗</i></a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-top">
-        <a class="brand" href="#top" aria-label="Back to the top"><img src="./assets/gara-logo.png" width="236" height="71" alt="GARA" /></a>
-        <p>Make the road mean something.</p>
-        <a href="#top">Back to top ↑</a>
+    <section class="circle section" id="circle" aria-labelledby="circle-title">
+      <div class="shell circle-layout">
+        <div class="circle-art"><figure class="interior-photo"><img src="./assets/2026-11/interior.jpg" width="600" height="900" loading="lazy" alt="The wood and chrome steering wheel of a classic car" /><figcaption>It’s in the details.</figcaption></figure><button class="phone profile-phone" type="button" data-zoom="./assets/2026-11/profile-720.jpg" data-caption="Gara profile, garage and private map header. The GaraTest account uses licensed reference photography and synthetic history." aria-label="Enlarge Gara profile screenshot"><img src="./assets/2026-11/profile-720.jpg" srcset="./assets/2026-11/profile-440.jpg 440w, ./assets/2026-11/profile-720.jpg 720w" sizes="(max-width:600px) 48vw, 258px" width="720" height="1565" loading="lazy" alt="The actual GaraTest profile with a private driving map header, garage and photo posts" /><span class="image-expand" aria-hidden="true">↗</span></button></div>
+        <div class="circle-copy"><p class="eyebrow">Your people. Your place.</p><h2 id="circle-title">For the ones<br />who <span>get it.</span></h2><p class="section-lede">The car you keep looking back at.<br />The road you tell a friend about.<br />The small details that mean something.</p><p>Gara brings them together in a profile that feels personal—with your garage, posts, photos, routes, and saved discoveries.</p><div class="relationship-note"><span aria-hidden="true">↗</span><p><strong>Follow an interest. Build a friendship.</strong><small>Following is immediate. Gara friendships are accepted by both people and give friend sharing its meaning.</small></p></div></div>
       </div>
-      <div class="shell footer-bottom"><span>In development · iPhone first</span><nav class="legal-links" aria-label="Legal and support"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms of Use</a><a href="./support.html">Support</a></nav><span>© 2026 GARA · Daniel Roci</span></div>
-    </footer>
+      <p class="map-attribution circle-attribution"><a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> <a href="https://apps.mapbox.com/feedback/">Improve this map</a></p>
+    </section>
 
-    <script src="./script.js?v=20260716b"></script>
-  </body>
+    <section class="road-statement" aria-labelledby="statement-title"><img src="./assets/2026-11/forest.jpg" width="1200" height="800" loading="lazy" alt="A quiet forest road stretching into the distance" /><div class="shell statement-copy"><p class="eyebrow">Go for the experience</p><h2 id="statement-title">A good drive<br />isn’t a race.</h2><p>Enjoy the road. Respect its limits.<br />There’s always another reason to return.</p></div><span class="statement-caption">Road photography / Sandra Brouwer</span></section>
+
+    <section class="considered section shell" aria-labelledby="considered-title"><div class="section-heading"><div><p class="eyebrow">Thought through, from the start</p><h2 id="considered-title">Your pace.<br />Your choices.</h2></div><p>The road comes first. Gara is being built to make exploration feel personal, deliberate, and easy to understand.</p></div><div class="principle-grid"><article><span>01 / Control</span><h3>Choose what you share.</h3><p>Your raw recorded driving history is private. Routes and social content follow their audience rules, with following and friendship kept distinct.</p></article><article><span>02 / Clarity</span><h3>Know what starts a drive.</h3><p>Recommendations open for you to review. You decide when to start a route. Automatic everyday mapping is a separate, optional setting.</p></article><article><span>03 / Responsibility</span><h3>Keep the road above the result.</h3><p>Public-road speed and fastest-time competition are unavailable. Follow traffic laws, conditions, and closures; use the app while safely parked.</p></article></div></section>
+
+    <section class="questions section shell" id="questions" aria-labelledby="questions-title"><div><p class="eyebrow">Good to know</p><h2 id="questions-title">Before the<br />next turn.</h2><a class="text-link" href="./support.html">Visit Support <span aria-hidden="true">↗</span></a></div><div class="faq-list"><details><summary>Can I download Gara yet?<span aria-hidden="true">+</span></summary><p>Gara is being prepared for iPhone testing. Public registration is not open and this website does not offer an App Store download yet. Contact us with questions about future access.</p></details><details><summary>What’s the difference between a fixed and open route?<span aria-hidden="true">+</span></summary><p>A fixed route has a defined path. An open route has a start and finish, with the path between them left to you. Open routes do not provide directions. Always choose legal, suitable roads and respect closures.</p></details><details><summary>Can other people see my driving map?<span aria-hidden="true">+</span></summary><p>Your raw recorded drive history and private driving map are not shown to other drivers through ordinary profile access. Shared routes, photos, and posts can still reveal places. Read the <a href="./privacy.html">Privacy Policy</a> for details.</p></details><details><summary>Does Gara record every drive automatically?<span aria-hidden="true">+</span></summary><p>Everyday automatic mapping is optional and needs location permission. Its tracks stay on your iPhone, and some journeys may be missed. Deliberately recorded route drives are a separate feature.</p></details><details><summary>Who is Gara for?<span aria-hidden="true">+</span></summary><p>People aged 18 or over who enjoy roads, cars, and sharing that interest with their circle. Driving eligibility and road-use laws still apply wherever you are.</p></details></div></section>
+
+    <section class="access section" id="access" aria-labelledby="access-title"><div class="shell access-inner"><p class="eyebrow"><span class="status-dot"></span> The road ahead</p><h2 id="access-title">Something good<br />is taking shape.</h2><p>We’re preparing Gara for iPhone.<br />Have a question, an idea, or an interest in future access?</p><a class="button button-lime" href="mailto:gara.support@gmail.com?subject=Hello%20Gara">Say hello <span aria-hidden="true">↗</span></a><small>Public registration is not open. For adults 18+.</small></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-top"><a class="brand" href="#top" aria-label="Back to Gara home"><img src="./assets/gara-logo.png" width="236" height="71" alt="GARA" /></a><p>For the love of the drive.</p><a class="back-top" href="#top">Back to top ↑</a></div><div class="shell footer-bottom"><span>© 2026 Gara · Daniel Roci</span><nav aria-label="Legal and support"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms of Use</a><a href="./support.html">Support</a></nav><span>Made with care in Sweden.</span></div><details class="shell photo-credits"><summary>Photography &amp; map credits</summary><p>Road: <a href="https://www.pexels.com/photo/green-trees-around-empty-road-16576852/">Patrik Stoltz</a> · Interior: <a href="https://www.pexels.com/photo/the-interior-of-a-vintage-car-13987154/">Vision plug</a> · Forest: <a href="https://www.pexels.com/photo/asphalt-road-in-forest-16050115/">Sandra Brouwer</a> · Profile reference: <a href="https://www.pexels.com/photo/bmw-car-parked-18688731/">Mike Bird</a> / Pexels. Photography is illustrative; it does not represent a verified Gara route or imply endorsement. Maps © Mapbox © OpenStreetMap.</p></details></footer>
+  <dialog class="screen-dialog" aria-labelledby="screen-caption"><button class="dialog-close" type="button" aria-label="Close enlarged screenshot">Close <span aria-hidden="true">×</span></button><img id="screen-large" width="720" height="1565" alt="" /><p id="screen-caption"></p></dialog>
+</body>
 </html>
