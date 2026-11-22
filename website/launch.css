@@ -6,3 +6,30 @@
 @media(max-width:700px){.header-row nav a{padding-block:15px}.header-link{white-space:nowrap}.legal-links a{padding-block:10px}}
 @media(max-width:360px){.header-row nav a:last-child{display:none}.hero h1{font-size:58px}.legal-main h1{font-size:52px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.phone,.enlarge{transition:none}.phone:hover{transform:none}}
+
+/* Editorial palette: lime is reserved for the main action and the wordmark. */
+:root {
+  --paper: #fcfcfa;
+  --ink: #20241f;
+  --muted: #525a51;
+  --line: #dddfd9;
+  --soft: #f0f2ed;
+  --accent: #31562e;
+  --signal: #9cff00;
+  --signal-pressed: #85e600;
+}
+.site-header { background: rgba(252,252,250,.97); }
+.wordmark span { background: var(--signal); }
+em, .editorial-line span, .legal-main .eyebrow { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: var(--accent); }
+.button { background: var(--signal); color: var(--ink); border: 1px solid #48662d; }
+.button:hover, .button:active { background: var(--signal-pressed); }
+.plain-link, .faq a, .legal-main a { color: var(--accent); }
+.header-link:hover { background: var(--soft); }
+.header-row nav a:hover { color: var(--accent); text-decoration: underline; }
+.explore-stage { background: linear-gradient(145deg,#e5e9e0,#f9faf7); border-color: var(--line); }
+.route-types { border-color: var(--line); }
+.road-pause em { color: var(--paper); }
+.release-note { border-color: #d3d9ce; }
+.notice { border-left-color: var(--accent); }
+.screen-dialog::backdrop { background: #171c16cc; }
