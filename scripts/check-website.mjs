@@ -34,7 +34,8 @@ function inspect(html, name, isLive = false) {
   }
   if (name === 'index.html') {
     check(!html.includes('assets/screens/current/'), name + ': outdated app screenshot still referenced');
-    check(/public registration is not open/i.test(html), name + ': launch status missing');
+    check(/verified account.{0,20}no invite needed/i.test(html), name + ': invitation-free verified signup explanation missing');
+    check(html.includes('assets/launch/explore-720.jpg'), name + ': current Explore capture missing');
   }
 }
 
