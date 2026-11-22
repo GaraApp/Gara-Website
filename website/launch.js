@@ -1,4 +1,4 @@
-const captions = {explore:'Explore on GaraMap. Actual iPhone capture, 22 November 2026. Sample route content. Maps © Mapbox © OpenStreetMap.',discover:'Discover. Actual iPhone capture, 22 November 2026. GaraTest demonstration account and posts.','driving-map':'Private Driving Map. Actual iPhone capture, 22 November 2026. Synthetic test history, not a real person’s travel record. Maps © Mapbox © OpenStreetMap.'};
+const captions = {explore:'Explore on GaraMap. Actual iPhone capture, 22 November 2026. Sample route content. Maps © Mapbox © OpenStreetMap.',discover:'Discover. Actual iPhone capture, 22 November 2026. GaraTest demonstration account and posts.',profile:'Gara Profile. Actual iPhone capture, 22 November 2026. The Driving Map shortcut and sample distance are shown on the GaraTest account.'};
 const dialog = document.querySelector('.screen-dialog');
 document.querySelectorAll('[data-screen]').forEach(button => button.addEventListener('click', () => {
   const image = document.querySelector('#screen-large'); image.src = `./assets/launch/${button.dataset.screen}-720.jpg`; image.alt = button.querySelector('img').alt;
